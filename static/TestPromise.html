@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function sayone() {
+        return new Promise((resolve, reject) => {
+            console.log("1")
+            resolve()
+      })
+    }
+
+    function sayotwo() {
+        return new Promise((resolve, reject) => {
+            console.log("2")
+            resolve()
+        })
+    }
+
+  let p = new Promise(function (resolve, reject) {
+      console.log("start say!")
+      resolve()
+  })
+
+    p.then(sayone).then(sayotwo).then(sayone).then(sayotwo).then(sayotwo)
+</script>
+</html>
